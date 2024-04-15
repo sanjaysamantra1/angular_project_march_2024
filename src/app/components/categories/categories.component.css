@@ -1,0 +1,13 @@
+.category {
+    text-align: center;
+}
+
+.category img {
+    width: 70px;
+    height: 70px;
+}
+
+.category div {
+    font-weight: 500;
+    font-size: 12px;
+}

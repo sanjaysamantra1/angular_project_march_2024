@@ -1,0 +1,25 @@
+<h1 class="text-center">Data Binding Component</h1>
+
+<div class="container border">
+    <h4>Name is: {{name}} </h4>
+    <h4>Name is: <span [innerHTML]="name"></span></h4>
+
+    1 way : <input type="text" value={{name}}> <br /><br />
+    1 way : <input type="text" [value]=name> <br /><br />
+    1 way : <input type="text" bind-value=name> <br /><br />
+    2 way : <input type="text" [(ngModel)]=name> <br /><br />
+    2 way : <input type="text" bindon-ngModel=name> <br /><br />
+
+    <img src="{{img_add}}" alt="" />
+    <img bind-src="img_add" alt="" />
+    <img [src]="img_add" alt="" />
+    <br />
+
+    <button disabled="{{flag}}">Click Me</button>
+    <button [disabled]="flag" class="mx-1" (click)="f1()">Click Me</button>
+    <button bind-disabled="flag" on-click="f1()">Click Me</button>
+
+    <hr />
+    <h1 [hidden]="flag">I am a paragraph, Please click below button to toggle me</h1>
+    <button (click)="toggle()">{{ flag ? 'SHOW': 'HIDE' }}</button>
+</div>

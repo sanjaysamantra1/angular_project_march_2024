@@ -22,4 +22,35 @@
     <hr />
     <h1 [hidden]="flag">I am a paragraph, Please click below button to toggle me</h1>
     <button (click)="toggle()">{{ flag ? 'SHOW': 'HIDE' }}</button>
+    <hr />
+    <input [type]="flag ? 'text' : 'password' ">
+    <input type="checkbox" (change)="flag=!flag">TOGGLE PASSWORD
+    <hr />
+    <textarea maxlength="100" [(ngModel)]="msg">
+    </textarea>
+    <div>Remaining Characters: {{100-msg.length}}</div>
+    <hr />
+    <select [(ngModel)]="selectedState">
+        <option>Odisha</option>
+        <option>AP</option>
+        <option>UP</option>
+        <option>Karnataka</option>
+        <option>Kerla</option>
+        <option>Goa</option>
+    </select>
+    <div>Selected state: {{selectedState}}</div>
+    <hr />
+    <input type="number" [(ngModel)]="num1">
+    <input type="number" [(ngModel)]="num2" class="mx-1">
+    <div>Addition of {{num1}} & {{num2}} is {{num1+num2}}</div>
+    <div>subtraction of {{num1}} & {{num2}} is {{num1-num2}}</div>
+    <div>multiplication of {{num1}} & {{num2}} is {{num1*num2}}</div>
+    <hr />
+    <h3>Template reference variable</h3>
+    <input type="number" #box1>
+    <input type="number" ref-box2 class="mx-1">
+    <button (click)="addition(box1.value,box2.value)">Add</button>
+    <div>{{addMessage}}</div>
+    <hr />
+    <button>DARK/LIGHT</button>
 </div>

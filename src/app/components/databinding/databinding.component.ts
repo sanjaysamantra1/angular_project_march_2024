@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,8 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './databinding.component.html',
-  styleUrl: './databinding.component.css'
+  styleUrl: './databinding.component.css',
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class DatabindingComponent {
   name: string = 'Sachin Tendulkar';
@@ -21,7 +22,7 @@ export class DatabindingComponent {
   f1() {
     alert('This is F1.. function')
   }
-  toggle(a:any) {
+  toggle(a: any) {
     console.log(a)
     this.flag = !this.flag;
   }

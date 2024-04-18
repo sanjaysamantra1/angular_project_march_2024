@@ -1,0 +1,54 @@
+<div class="container border">
+    <h1 class="text-center">Directive Component</h1>
+
+    <h3 *ngIf="n%2==0">{{n}} is Even Number</h3>
+    <h3 *ngIf="n%2!=0">{{n}} is Odd Number</h3>
+
+    <div *ngIf="n%2==0; else elseBlock">
+        {{n}} is Even Number
+    </div>
+    <ng-template #elseBlock>{{n}} is Odd Number</ng-template>
+
+    <hr />
+
+    <h1 [ngSwitch]="x">
+        <p *ngSwitchCase="1">Monday</p>
+        <p *ngSwitchCase="2">Tuesday</p>
+        <p *ngSwitchCase="3">Wednesday</p>
+        <p *ngSwitchCase="4">Thursday</p>
+        <p *ngSwitchCase="5">Friday</p>
+        <p *ngSwitchCase="6">Saturday</p>
+        <p *ngSwitchCase="0">Sunday</p>
+        <p *ngSwitchDefault>Not a valid number</p>
+    </h1>
+
+    <ul>
+        <li *ngFor="let ele of cars">
+            {{ele}}
+        </li>
+    </ul>
+    <select>
+        <option *ngFor="let car of cars">
+            {{car}}
+        </option>
+    </select>
+
+    <table class="table table-bordered table-striped" border="2" align="center" width="50%">
+        <thead>
+            <tr>
+                <th>eid</th>
+                <th>name</th>
+                <th>sal</th>
+                <th>gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employees">
+                <td>{{emp.eId}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.sal}}</td>
+                <td>{{emp.gender}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

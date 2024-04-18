@@ -21,7 +21,7 @@
 
     <hr />
     <h1 [hidden]="flag">I am a paragraph, Please click below button to toggle me</h1>
-    <button (click)="toggle()">{{ flag ? 'SHOW': 'HIDE' }}</button>
+    <button (click)="toggle($event)">{{ flag ? 'SHOW': 'HIDE' }}</button>
     <hr />
     <input [type]="flag ? 'text' : 'password' ">
     <input type="checkbox" (change)="flag=!flag">TOGGLE PASSWORD

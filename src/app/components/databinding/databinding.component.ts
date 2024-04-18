@@ -21,7 +21,8 @@ export class DatabindingComponent {
   f1() {
     alert('This is F1.. function')
   }
-  toggle() {
+  toggle(a:any) {
+    console.log(a)
     this.flag = !this.flag;
   }
   addition(a: string, b: string) {

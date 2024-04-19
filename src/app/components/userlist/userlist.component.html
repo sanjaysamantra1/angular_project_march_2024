@@ -1,0 +1,20 @@
+<h1 class="text-center">User List</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let user of userList">
+            <div class="card text-center">
+                <img src="https://static.vecteezy.com/system/resources/previews/002/002/427/original/man-avatar-character-isolated-icon-free-vector.jpg"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{user.username}}</h5>
+                    <p class="card-text">{{user.name}}</p>
+                    <p class="card-text">{{user.phone}}</p>
+                    <p class="card-text">{{user.email}}</p>
+                    <p class="card-text">{{user.address.city}}</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

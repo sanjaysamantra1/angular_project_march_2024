@@ -23,8 +23,8 @@
     </h1>
 
     <ul>
-        <li *ngFor="let ele of cars">
-            {{ele}}
+        <li *ngFor="let ele of cars;let i=index;let e=even;">
+            <span [ngStyle]="{'background-color': e ? 'red':'green'}">{{ele}} ----- {{i}}</span>
         </li>
     </ul>
     <select>
@@ -33,23 +33,37 @@
         </option>
     </select>
 
-    <table class="table table-bordered table-striped" border="2" align="center" width="50%">
+    <table class="table table-bordered table-striped">
         <thead>
             <tr>
+                <th>index</th>
                 <th>eid</th>
                 <th>name</th>
                 <th>sal</th>
                 <th>gender</th>
+                <th>isFirst?</th>
+                <th>isLast?</th>
+                <th>isEven?</th>
+                <th>isOdd?</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let emp of employees">
+            <tr *ngFor="let emp of employees;trackBy:employeeTrackBy;let i=index;
+            let f = first;let l= last;let e=even;let o=odd">
+                <td>{{i+1}}</td>
                 <td>{{emp.eId}}</td>
                 <td>{{emp.name}}</td>
                 <td>{{emp.sal}}</td>
                 <td>{{emp.gender}}</td>
+                <td>{{f}}</td>
+                <td>{{l}}</td>
+                <td>{{e}}</td>
+                <td>{{o}}</td>
             </tr>
         </tbody>
     </table>
-    <button class="btn btn-primary">asdf</button>
+    <button class="btn btn-primary" (click)="addEmployee()">Add Emp</button>
+
+    <h1 *ngIf="flag">This is Paragraph-1</h1>
+    <h1 [hidden]="!flag">This is Paragraph-2</h1>
 </div>

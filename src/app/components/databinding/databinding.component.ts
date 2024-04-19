@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
   imports: [FormsModule],
   templateUrl: './databinding.component.html',
   styleUrl: './databinding.component.css',
-  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class DatabindingComponent {
   name: string = 'Sachin Tendulkar';

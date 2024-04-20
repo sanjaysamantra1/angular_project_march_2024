@@ -1,0 +1,31 @@
+<h1 class="text-center">Product List</h1>
+<div class="container">
+    <div class="row my-2">
+        <div class="col-sm-4 offset-4">
+            <input type="search" [(ngModel)]="searchText">
+        </div>
+        <div class="col-sm-4">
+            <button class="btn btn-primary mx-1">Sort Asc</button>
+            <button class="btn btn-secondary">Sort Desc</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let product of productsArr
+        | paginate: { itemsPerPage: 4, currentPage: p} ">
+            <div class="card text-center">
+                <img src="{{product.image}}" class="card-img-top" alt="..." height="150">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.category}}</h5>
+                    <p class="card-text">{{product.title}}</p>
+                    <p class="card-text text-truncate">{{product.description}}</p>
+                    <p class="card-text">{{product.rating.rate}}</p>
+                    <p class="card-text">{{product.price}}</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="offset-4">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+</div>

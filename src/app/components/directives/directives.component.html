@@ -1,6 +1,8 @@
 <div class="container border">
     <h1 class="text-center">Directive Component</h1>
 
+    <ng-content></ng-content>
+
     <h3 *ngIf="n%2==0">{{n}} is Even Number</h3>
     <h3 *ngIf="n%2!=0">{{n}} is Odd Number</h3>
 
@@ -28,9 +30,9 @@
         </li>
     </ul>
     <select>
-        <option *ngFor="let car of cars">
-            {{car}}
-        </option>
+        <ng-container *ngFor="let car of cars">
+            <option *ngIf="flag">{{car}}</option>
+        </ng-container>
     </select>
 
     <table class="table table-bordered table-striped">

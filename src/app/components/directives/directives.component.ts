@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './directives.component.css'
 })
 export class DirectivesComponent {
-  flag: boolean = false;
+  flag: boolean = true;
   n: number = 4;
   x: number = 2;
   cars = ['Tata', 'Honda', 'Maruti', 'Hundai', 'Toyota'];

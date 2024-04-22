@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-databinding',
@@ -27,5 +28,8 @@ export class DatabindingComponent {
   }
   addition(a: string, b: string) {
     this.addMessage = `Addition of ${a} and ${b} is ${+a + +b}`
+  }
+  openAlert() {
+    Swal.fire('This is a title', 'This is a Description', 'success')
   }
 }

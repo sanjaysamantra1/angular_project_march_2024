@@ -66,6 +66,17 @@
     </table>
     <button class="btn btn-primary" (click)="addEmployee()">Add Emp</button>
 
-    <h1 *ngIf="flag">This is Paragraph-1</h1>
+    <h1 *ngIf="flag" appHighlight>This is Paragraph-1</h1>
     <h1 [hidden]="!flag">This is Paragraph-2</h1>
+    <hr />
+
+    <div [ngStyle]="{'background-color': n%2!==0 ? 'red':'green'}">
+        {{n}} is {{n%2==0?'Even':'Odd'}} Number</div>
+
+    <button class="btn" [ngClass]="n%2==0 ?'btn-success':'btn-danger'">Click me</button>
+    <hr />
+
+    Custom Directive: <input type="text" numberonly />
+    <div appHighlight>This is a div, this div is using a custom directive</div>
+    <button clickcount>Click me</button>
 </div>

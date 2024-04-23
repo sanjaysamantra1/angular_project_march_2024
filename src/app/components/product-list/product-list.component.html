@@ -10,8 +10,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-3" *ngFor="let product of productsArr
-        | paginate: { itemsPerPage: 4, currentPage: p} ">
+        <div class="col-sm-3" *ngFor="let product of productsArr | search:searchText
+        | paginate: { itemsPerPage: 4, currentPage: p}  ">
             <div class="card text-center">
                 <img src="{{product.image}}" class="card-img-top" alt="..." height="150">
                 <div class="card-body">

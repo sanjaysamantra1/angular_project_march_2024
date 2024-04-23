@@ -1,0 +1,45 @@
+<div class="container border">
+    <h2 class="text-center">Pipe Component</h2>
+    <h4>{{name}}</h4>
+    <h4>{{name | uppercase}}</h4>
+    <h4>{{name | lowercase}}</h4>
+    <h4>{{name | titlecase}}</h4>
+    <h4>{{mySal}}</h4>
+    <h4>{{mySal | currency}}</h4>
+    <h4>{{mySal | currency : 'INR'}}</h4>
+    <!--input | pipeName : Argument -->
+    <h4>{{mySal | currency : '&#20803;'}}</h4>
+    <hr />
+    <h4>{{dateObj}}</h4>
+    <h4>{{dateObj | date}}</h4>
+    <h4>{{dateObj | date : 'fullDate'}}</h4>
+    <h4>{{dateObj | date : 'mediumDate'}}</h4>
+    <h4>{{dateObj | date : 'shortDate'}}</h4>
+    <h4>{{dateObj | date : 'fullTime'}}</h4>
+    <h4>{{dateObj | date : 'mediumTime'}}</h4>
+    <h4>{{dateObj | date : 'shortTime'}}</h4>
+    <h4>{{dateObj | date : 'dd-MMMM-yyyy'}}</h4>
+    <h4>{{dateObj | date : 'dd-MMM-yyyy'}}</h4>
+    <h4>{{dateObj | date : 'dd-MM-yy'}}</h4>
+    <h4>{{ dateObj | date: "fullTime":"UTC" }}</h4>
+    <h4>{{ dateObj | date: "fullTime":"est" }}</h4>
+    <hr>
+    <h4>{{ 12.111222333 | number: "3.2-5" }}</h4>
+    <h4>{{ 12.1 | number: "4.3-5" }}</h4>
+    <h4>{{ 0.25 | percent }}</h4>
+    <hr>
+    <h4>{{user}}</h4>
+    <h4>{{user | json}}</h4>
+    <div *ngFor="let entry of user | keyvalue">
+        {{entry.key}} ----- {{entry.value}}
+    </div>
+    <h4>{{arr}}</h4>
+    <h4>{{arr | slice : 2:4}}</h4>
+    <h4>{{arr | slice : 2:-1}}</h4>
+
+    <textarea [(ngModel)]="msg" maxlength="100"></textarea>
+    <div>Remaining: {{msg | remaining:100}}</div>
+
+    <textarea [(ngModel)]="msg2" maxlength="200"></textarea>
+    <div>Remaining: {{msg2 | remaining:200}}</div>
+</div>

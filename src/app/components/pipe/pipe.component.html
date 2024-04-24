@@ -42,4 +42,30 @@
 
     <textarea [(ngModel)]="msg2" maxlength="200"></textarea>
     <div>Remaining: {{msg2 | remaining:200}}</div>
+    <hr>
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr *ngFor="let emp of employees">
+                <td>{{emp.eId}}</td>
+                <td>{{emp.name | prefix : emp.gender }}</td>
+                <td>{{emp.sal}}</td>
+                <td>{{emp.gender}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <input type="number" [(ngModel)]="cardinal" />
+    <h3>Cardinal : {{cardinal}}</h3>
+    <h3>Ordinal : {{cardinal | ordinal}}</h3>
+    <hr>
+    <h2>
+        <span *ngFor="let ele of numArr1">
+            {{ele}}
+        </span><br/>
+        <span *ngFor="let ele of numArr2 | mySort">
+            {{ele}}
+        </span><br/>
+        <input type="number" [(ngModel)]="newEle" />
+        <button (click)="numArr2.push(newEle)">push</button> 
+    </h2>
 </div>

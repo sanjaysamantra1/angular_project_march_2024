@@ -5,6 +5,7 @@ import { UserlistComponent } from '../userlist/userlist.component';
 import { MymodalComponent } from '../mymodal/mymodal.component';
 import { ProductListComponent } from '../product-list/product-list.component';
 import { PipeComponent } from '../pipe/pipe.component';
+import { ParentComponent } from '../parent/parent.component';
 
 @Component({
   selector: 'app-center',
@@ -15,7 +16,8 @@ import { PipeComponent } from '../pipe/pipe.component';
     UserlistComponent,
     MymodalComponent,
     ProductListComponent,
-    PipeComponent
+    PipeComponent,
+    ParentComponent
   ],
   templateUrl: './center.component.html',
   styleUrl: './center.component.css',

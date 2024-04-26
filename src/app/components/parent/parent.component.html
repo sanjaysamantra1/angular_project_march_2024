@@ -1,13 +1,18 @@
 <div class="container border">
     <div class="row border">
         <h4>This is Parent</h4>
+        <span *ngFor="let ele of arr">
+           {{ele}}
+        </span>
+        <button (click)="arr.push(50)" class="btn btn-primary">add data</button>
         <div>My Own data a is {{a}}</div>
+        <input type="number" [(ngModel)]="a">
         <div>Name from child is {{parentName}}</div>
         <div>Address from child is {{parentAddress}}</div>
     </div>
     <div class="row">
         <div class="col-sm-6 border">
-            <app-child1 [aChild]="a" #child1 (nameEvent)="receiveNameFromChild($event)"></app-child1>
+            <app-child1 [arr]="arr" [aChild]="a" #child1 (nameEvent)="receiveNameFromChild($event)"></app-child1>
         </div>
         <div class="col-sm-6 border">
             <app-child2 [b]="b" [child1Obj]="child1" [parentAddress]="parentAddress"></app-child2>

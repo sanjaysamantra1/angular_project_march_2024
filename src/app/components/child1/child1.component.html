@@ -1,4 +1,8 @@
 <p>child1 works!</p>
+<span *ngFor="let ele of arr">
+    {{ele}}
+ </span>
+ <button class="btn btn-primary" (click)="refreshMyData()">refresh</button>
 <div>My Parent's data a is {{aChild}}</div>
 <div>My own data name is- {{name}}</div>
 <div>

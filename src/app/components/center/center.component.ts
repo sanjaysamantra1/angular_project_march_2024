@@ -8,6 +8,8 @@ import { PipeComponent } from '../pipe/pipe.component';
 import { ParentComponent } from '../parent/parent.component';
 import { CommonModule } from '@angular/common';
 import { MathComponent } from '../math/math.component';
+import { EmployeeListComponent } from '../employee-list/employee-list.component';
+import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
 
 @Component({
   selector: 'app-center',
@@ -21,7 +23,9 @@ import { MathComponent } from '../math/math.component';
     PipeComponent,
     ParentComponent,
     CommonModule,
-    MathComponent
+    MathComponent,
+    EmployeeListComponent,
+    HttpDemo1Component
   ],
   templateUrl: './center.component.html',
   styleUrl: './center.component.css',

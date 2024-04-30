@@ -1,0 +1,14 @@
+<p>http-demo1 works!</p>
+
+<h1 class="text-center">User List</h1>
+<table class="table table-bordered table-striped">
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.username}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.address.city}}</td>
+            <td>{{user.phone}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -11,7 +11,7 @@ import { MathService } from '../../services/math.service';
 export class MathComponent {
 
   // Dependency Injection
-  constructor(private mathService: MathService) {
+  constructor(public mathService: MathService) {
     console.log(this.mathService.add(10, 20))
     console.log(this.mathService.sub(10, 20))
     console.log(this.mathService.mul(10, 20))

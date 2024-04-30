@@ -6,6 +6,8 @@ import { MymodalComponent } from '../mymodal/mymodal.component';
 import { ProductListComponent } from '../product-list/product-list.component';
 import { PipeComponent } from '../pipe/pipe.component';
 import { ParentComponent } from '../parent/parent.component';
+import { CommonModule } from '@angular/common';
+import { MathComponent } from '../math/math.component';
 
 @Component({
   selector: 'app-center',
@@ -17,11 +19,13 @@ import { ParentComponent } from '../parent/parent.component';
     MymodalComponent,
     ProductListComponent,
     PipeComponent,
-    ParentComponent
+    ParentComponent,
+    CommonModule,
+    MathComponent
   ],
   templateUrl: './center.component.html',
   styleUrl: './center.component.css',
 })
 export class CenterComponent {
-
+  flag: boolean = true;
 }

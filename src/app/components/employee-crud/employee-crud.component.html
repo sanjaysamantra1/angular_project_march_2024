@@ -9,10 +9,9 @@
                 <tbody>
                     <tr *ngFor="let emp of employees">
                         <td>{{emp?.id}}</td>
-                        <td>{{emp?.eId}}</td>
-                        <td>{{emp?.name}}</td>
-                        <td>{{emp?.sal}}</td>
-                        <td>{{emp?.gender}}</td>
+                        <td>{{emp.getFullName()}}</td>
+                        <td>{{emp.getYearlySalary()}}</td>
+                        <td>{{emp?.email}}</td>
                         <td>
                             <button class="btn btn-danger" (click)="deleteEmp(emp.id)">DELETE</button>
                             <button class="btn btn-primary">Edit</button>

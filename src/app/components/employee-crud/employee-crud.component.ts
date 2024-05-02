@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { EmployeeCrudService } from '../../services/employee-crud.service';
 import { CommonModule } from '@angular/common';
 import Swal from 'sweetalert2'
+import { Employee, IEmployee } from '../../models/employee';
 
 @Component({
   selector: 'app-employee-crud',
@@ -12,16 +13,17 @@ import Swal from 'sweetalert2'
 })
 export class EmployeeCrudComponent {
   isLoading: boolean = false;
-  employees: any[] = [];
+  employees: Employee[] = [];
 
   constructor(private employeeCrudService: EmployeeCrudService) {
 
   }
   fetchEmployees() {
     this.isLoading = true;
-    this.employeeCrudService.getAllEmployees().subscribe((response: any) => {
+    this.employeeCrudService.getAllEmployees().subscribe((response: Employee[]) => {
       this.employees = response;
       this.isLoading = false;
+      console.log(this.employees)
     })
   }
   deleteEmp(id: any) {

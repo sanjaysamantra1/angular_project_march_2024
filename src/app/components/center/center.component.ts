@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { MathComponent } from '../math/math.component';
 import { EmployeeListComponent } from '../employee-list/employee-list.component';
 import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
+import { EmployeeCrudComponent } from '../employee-crud/employee-crud.component';
 
 @Component({
   selector: 'app-center',
@@ -25,7 +26,8 @@ import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
     CommonModule,
     MathComponent,
     EmployeeListComponent,
-    HttpDemo1Component
+    HttpDemo1Component,
+    EmployeeCrudComponent
   ],
   templateUrl: './center.component.html',
   styleUrl: './center.component.css',

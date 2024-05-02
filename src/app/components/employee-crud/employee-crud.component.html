@@ -1,0 +1,40 @@
+<h1 class="text-center">Employee CRUD</h1>
+<button (click)="fetchEmployees()">fetch data</button>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <h1 *ngIf="isLoading">Data Loading......</h1>
+            <table *ngIf="!isLoading" class="table table-bordered table-striped">
+                <tbody>
+                    <tr *ngFor="let emp of employees">
+                        <td>{{emp?.id}}</td>
+                        <td>{{emp?.eId}}</td>
+                        <td>{{emp?.name}}</td>
+                        <td>{{emp?.sal}}</td>
+                        <td>{{emp?.gender}}</td>
+                        <td>
+                            <button class="btn btn-danger" (click)="deleteEmp(emp.id)">DELETE</button>
+                            <button class="btn btn-primary">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-4 border p-2">
+            <p>
+                Eid: <input #eId />
+            </p>
+            <p>
+                Name: <input #name />
+            </p>
+            <p>
+                Gender: <input #gender />
+            </p>
+            <p>
+                Salary: <input #sal />
+            </p>
+            <button (click)="addEmployee(eId.value,name.value,gender.value,sal.value)">Add Employee</button>
+        </div>
+    </div>
+</div>

@@ -11,6 +11,7 @@ import { MathComponent } from '../math/math.component';
 import { EmployeeListComponent } from '../employee-list/employee-list.component';
 import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
 import { EmployeeCrudComponent } from '../employee-crud/employee-crud.component';
+import { ObservableDemo1Component } from '../observable-demo1/observable-demo1.component';
 
 @Component({
   selector: 'app-center',
@@ -27,7 +28,8 @@ import { EmployeeCrudComponent } from '../employee-crud/employee-crud.component'
     MathComponent,
     EmployeeListComponent,
     HttpDemo1Component,
-    EmployeeCrudComponent
+    EmployeeCrudComponent,
+    ObservableDemo1Component
   ],
   templateUrl: './center.component.html',
   styleUrl: './center.component.css',

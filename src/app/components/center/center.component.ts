@@ -12,6 +12,8 @@ import { EmployeeListComponent } from '../employee-list/employee-list.component'
 import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
 import { EmployeeCrudComponent } from '../employee-crud/employee-crud.component';
 import { ObservableDemo1Component } from '../observable-demo1/observable-demo1.component';
+import { ObservableDemo2Component } from '../observable-demo2/observable-demo2.component';
+import { ObservableDemo3Component } from '../observable-demo3/observable-demo3.component';
 
 @Component({
   selector: 'app-center',
@@ -29,7 +31,9 @@ import { ObservableDemo1Component } from '../observable-demo1/observable-demo1.c
     EmployeeListComponent,
     HttpDemo1Component,
     EmployeeCrudComponent,
-    ObservableDemo1Component
+    ObservableDemo1Component,
+    ObservableDemo2Component,
+    ObservableDemo3Component
   ],
   templateUrl: './center.component.html',
   styleUrl: './center.component.css',

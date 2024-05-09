@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 offset-4">
+            <h2>Template Driven Form</h2>
+            <form #myForm="ngForm" (submit)="submitMyForm(myForm)">
+                <p>
+                    First Name:
+                    <input name="firstName" #fName='ngModel' ngModel required />
+                </p>
+                <p>
+                    last Name:
+                    <input name="lastName" ngModel />
+                </p>
+                <p>
+                    email:
+                    <input name="email" ngModel />
+                </p>
+                <fieldset ngModelGroup="address">
+                    <p>Street:<input name="street" ngModel /> </p>
+                    <p>City:<input name="city" ngModel /> </p>
+                    <p>Pin:<input name="pin" ngModel /> </p>
+                </fieldset>
+                <input type="submit" value="Submit" [disabled]="myForm.invalid" />
+            </form>
+            <div>
+                {{myForm.value | json}}
+                <hr />
+                {{fName.value}}
+            </div>
+        </div>
+    </div>
+</div>

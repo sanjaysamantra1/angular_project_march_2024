@@ -18,6 +18,8 @@ import { SubjectDemo1Component } from '../subject-demo-1/subject-demo-1.componen
 import { Messeage1Component } from '../messeage-1/messeage-1.component';
 import { Messeage2Component } from '../messeage-2/messeage-2.component';
 import { Messeage3Component } from '../messeage-3/messeage-3.component';
+import { TodolistComponent } from '../todolist/todolist.component';
+import { AddTodoComponent } from '../add-todo/add-todo.component';
 
 @Component({
   selector: 'app-center',
@@ -41,7 +43,9 @@ import { Messeage3Component } from '../messeage-3/messeage-3.component';
     SubjectDemo1Component,
     Messeage1Component,
     Messeage2Component,
-    Messeage3Component
+    Messeage3Component,
+    TodolistComponent,
+    AddTodoComponent
   ],
   templateUrl: './center.component.html',
   styleUrl: './center.component.css',

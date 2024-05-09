@@ -14,6 +14,10 @@ import { EmployeeCrudComponent } from '../employee-crud/employee-crud.component'
 import { ObservableDemo1Component } from '../observable-demo1/observable-demo1.component';
 import { ObservableDemo2Component } from '../observable-demo2/observable-demo2.component';
 import { ObservableDemo3Component } from '../observable-demo3/observable-demo3.component';
+import { SubjectDemo1Component } from '../subject-demo-1/subject-demo-1.component';
+import { Messeage1Component } from '../messeage-1/messeage-1.component';
+import { Messeage2Component } from '../messeage-2/messeage-2.component';
+import { Messeage3Component } from '../messeage-3/messeage-3.component';
 
 @Component({
   selector: 'app-center',
@@ -33,7 +37,11 @@ import { ObservableDemo3Component } from '../observable-demo3/observable-demo3.c
     EmployeeCrudComponent,
     ObservableDemo1Component,
     ObservableDemo2Component,
-    ObservableDemo3Component
+    ObservableDemo3Component,
+    SubjectDemo1Component,
+    Messeage1Component,
+    Messeage2Component,
+    Messeage3Component
   ],
   templateUrl: './center.component.html',
   styleUrl: './center.component.css',

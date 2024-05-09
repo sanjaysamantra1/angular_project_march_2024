@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Observable, map, switchMap } from 'rxjs';
+import { Observable, exhaustMap, fromEvent, map, switchMap } from 'rxjs';
 
 interface PeopleData {
   name: string;
@@ -27,7 +27,17 @@ export class ObservableDemo3Component {
     search: this.searchBox,
   });
 
-  constructor(private httpClient: HttpClient) { }
+  exhaustMapDemo() {
+    const clicks = fromEvent(document, 'click');
+    const result = clicks.pipe(
+      exhaustMap(() => this.httpClient.get('https://fakestoreapi.com/products'))
+    );
+    result.subscribe((x) => console.log(x));
+  }
+
+  constructor(private httpClient: HttpClient) {
+    this.exhaustMapDemo();
+  }
 
   ngOnInit() {
 

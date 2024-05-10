@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 offset-4">
+            <h2>Model Driven Form</h2>
+
+            <form [formGroup]="registerForm" (submit)="submitMyForm(registerForm)">
+                <div>
+                    First Name:
+                    <input type="text" id="name" formControlName="firstname" />
+                    <span class="text-danger" *ngIf="registerForm.controls.firstname.hasError('required')">
+                        First name is a required field
+                    </span>
+                    <span class="text-danger" *ngIf="registerForm.controls.firstname.hasError('minlength')">
+                        minimum 5 characters required
+                    </span>
+                </div>
+                <div>
+                    Last Name:
+                    <input type="text" formControlName="lastname">
+                </div>
+                <div>
+                    Email:
+                    <input type="text" formControlName="email">
+                </div>
+                <fieldset formGroupName="address">
+                    <div>
+                        Street:
+                        <input type="text" formControlName="street">
+                    </div>
+                    <div>
+                        city:
+                        <input type="text" formControlName="city">
+                    </div>
+                    <div>
+                        pin:
+                        <input type="text" formControlName="pin">
+                    </div>
+                </fieldset>
+
+                <input type="submit" value="Submit" class="mx-1" />
+                <input type="reset" value="Clear" />
+            </form>
+            <div>{{registerForm.value|json}}</div>
+        </div>
+    </div>
+</div>

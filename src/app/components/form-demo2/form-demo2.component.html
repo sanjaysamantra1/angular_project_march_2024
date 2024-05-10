@@ -5,7 +5,11 @@
             <form #myForm="ngForm" (submit)="submitMyForm(myForm)">
                 <p>
                     First Name:
-                    <input name="firstName" #fName='ngModel' ngModel required />
+                    <input name="firstName" #fname='ngModel' ngModel required minlength="5" />
+                    <span *ngIf="fname.hasError('required') && fname.dirty" class="text-danger">Plz fill
+                        firstname</span>
+                    <span *ngIf="fname.hasError('minlength') && fname.dirty" class="text-danger">Minimum 5 chars
+                        required</span>
                 </p>
                 <p>
                     last Name:
@@ -21,11 +25,12 @@
                     <p>Pin:<input name="pin" ngModel /> </p>
                 </fieldset>
                 <input type="submit" value="Submit" [disabled]="myForm.invalid" />
+                <input type="reset" value="Clear" />
             </form>
             <div>
                 {{myForm.value | json}}
                 <hr />
-                {{fName.value}}
+                {{fname | json}}
             </div>
         </div>
     </div>

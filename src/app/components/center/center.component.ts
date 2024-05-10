@@ -22,6 +22,8 @@ import { TodolistComponent } from '../todolist/todolist.component';
 import { AddTodoComponent } from '../add-todo/add-todo.component';
 import { FormDemo1Component } from '../form-demo1/form-demo1.component';
 import { FormDemo2Component } from '../form-demo2/form-demo2.component';
+import { FormDemo3Component } from '../form-demo3/form-demo3.component';
+import { FormDemo4Component } from '../form-demo4/form-demo4.component';
 
 @Component({
   selector: 'app-center',
@@ -49,7 +51,9 @@ import { FormDemo2Component } from '../form-demo2/form-demo2.component';
     TodolistComponent,
     AddTodoComponent,
     FormDemo1Component,
-    FormDemo2Component
+    FormDemo2Component,
+    FormDemo3Component,
+    FormDemo4Component
   ],
   templateUrl: './center.component.html',
   styleUrl: './center.component.css',

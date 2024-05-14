@@ -20,7 +20,10 @@
                 </div>
                 <div>
                     Email:
-                    <input type="text" formControlName="email">
+                    <input type="text" formControlName="email" />
+                    <span class="text-danger" *ngIf="registerForm.controls.email.hasError('invalidMail')">
+                        Please enter a valid email
+                    </span>
                 </div>
                 <fieldset formGroupName="address">
                     <div>

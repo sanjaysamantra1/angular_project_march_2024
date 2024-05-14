@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MyEmailValidator } from '../../utils/my-email-validator';
 
 @Component({
   selector: 'app-form-demo3',
@@ -29,7 +30,7 @@ export class FormDemo3Component {
       firstname: new FormControl('Sachin',
         { validators: [Validators.required, Validators.minLength(5)], updateOn: "blur" }),
       lastname: new FormControl(),
-      email: new FormControl(),
+      email: new FormControl('', [Validators.required, Validators.email, MyEmailValidator.isValidEmail]),
       address: new FormGroup({
         street: new FormControl(),
         city: new FormControl(),

@@ -1,0 +1,19 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-4 offset-4">
+            <h1 class="text-center">Product Details</h1>
+
+            <div class="card text-center">
+                <img src="{{product.image}}" class="card-img-top" alt="..." height="150">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.category}}</h5>
+                    <p class="card-text">{{product.title}}</p>
+                    <p class="card-text text-truncate">{{product.description}}</p>
+                    <p class="card-text">{{product.rating.rate}}</p>
+                    <p class="card-text">{{product.price}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

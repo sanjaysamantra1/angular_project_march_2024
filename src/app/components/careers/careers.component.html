@@ -1,3 +1,17 @@
-<div class="container">
+<div class="container text-center">
     <h1>This is Careers Component</h1>
+
+    <div class="row border">
+        <div class="col-sm-4 border">
+            <div>
+                <a routerLink="/careers/permanent">Permanent Jobs</a>
+                <br /><br />
+                <a routerLink="/careers/contract">Contract Jobs</a>
+            </div>
+        </div>
+        <div class="col-sm-8 border">
+            <h2>Router outlet used here</h2>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
 </div>

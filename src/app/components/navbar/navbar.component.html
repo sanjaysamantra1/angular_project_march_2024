@@ -22,6 +22,9 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="productlist" routerLinkActive="active-link">Products</a>
                 </li>
+                <li class="nav-item" *ngIf="flag">
+                    <a class="nav-link" routerLink="userlist" routerLinkActive="active-link">Users</a>
+                </li>
             </ul>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

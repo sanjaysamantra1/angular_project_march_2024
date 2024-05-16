@@ -12,19 +12,12 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductdetailsComponent {
   product: any;
 
-  constructor(private activatedRoute: ActivatedRoute,
-    private httpClient: HttpClient) {
-  }
-
+  constructor(private activatedRoute: ActivatedRoute) { }
   ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
-      const id = +params['id'];
-
-      this.httpClient.get(`https://fakestoreapi.com/products/${id}`).subscribe(response => {
-        this.product = response;
-      });
-
-    })
+    console.log( this.activatedRoute)
+    this.activatedRoute.data.subscribe((response: any) => {
+      this.product = response.product; // to be shown in UI
+    });
   }
 
 }

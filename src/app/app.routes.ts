@@ -13,6 +13,7 @@ import { ContractjobsComponent } from './components/contractjobs/contractjobs.co
 import { teacherGuard } from './guards/teacher.guard';
 import { employeeGuard } from './guards/employee.guard';
 import { haschangesGuard } from './guards/haschanges.guard';
+import { productdetailsResolver } from './resolvers/productdetails.resolver';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -22,7 +23,7 @@ export const routes: Routes = [
         path: 'careers',
         component: CareersComponent,
         canActivateChild: [employeeGuard],
-        canDeactivate:[haschangesGuard],
+        canDeactivate: [haschangesGuard],
         children: [
             { path: 'permanent', component: PermanentjobsComponent },
             { path: 'contract', component: ContractjobsComponent }
@@ -30,7 +31,11 @@ export const routes: Routes = [
     },
     { path: 'contactus', component: ContactusComponent },
     { path: 'productlist', component: ProductListComponent },
-    { path: 'productdetails/:id', component: ProductdetailsComponent },
+    {
+        path: 'productdetails/:id',
+        component: ProductdetailsComponent,
+        resolve: { product: productdetailsResolver }
+    },
     { path: 'userlist', component: UserlistComponent, canActivate: [teacherGuard] },
     { path: 'userdetails', component: UserdetailsComponent },
     { path: '**', component: NotfoundComponent },

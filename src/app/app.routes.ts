@@ -4,7 +4,6 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { CareersComponent } from './components/careers/careers.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
-import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
 import { UserlistComponent } from './components/userlist/userlist.component';
 import { UserdetailsComponent } from './components/userdetails/userdetails.component';
@@ -30,7 +29,10 @@ export const routes: Routes = [
         ]
     },
     { path: 'contactus', component: ContactusComponent },
-    { path: 'productlist', component: ProductListComponent },
+    { 
+        path: 'productlist', 
+        loadComponent: () => import('./components/product-list/product-list.component').then(response => response.ProductListComponent) 
+    },
     {
         path: 'productdetails/:id',
         component: ProductdetailsComponent,

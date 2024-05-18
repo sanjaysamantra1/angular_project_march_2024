@@ -1,0 +1,11 @@
+<div *ngIf="folderObj.isFolder" (click)="isExpanded=!isExpanded" style="cursor:pointer">
+  📁 <span>{{ folderObj.name }}</span>
+</div>
+<div *ngIf="isExpanded" style="padding-left: 20px;">
+  <div *ngFor="let item of folderObj.items">
+    <app-folder-explorer [folderObj]="item"></app-folder-explorer>
+  </div>
+</div>
+<div *ngIf="!folderObj.isFolder">
+  📑 <span>{{ folderObj.name }}</span>
+</div>

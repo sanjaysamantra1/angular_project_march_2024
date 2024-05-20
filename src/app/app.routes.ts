@@ -29,16 +29,16 @@ export const routes: Routes = [
         ]
     },
     { path: 'contactus', component: ContactusComponent },
-    { 
-        path: 'productlist', 
-        loadComponent: () => import('./components/product-list/product-list.component').then(response => response.ProductListComponent) 
+    {
+        path: 'productlist',
+        loadComponent: () => import('./components/product-list/product-list.component').then(response => response.ProductListComponent)
     },
     {
         path: 'productdetails/:id',
         component: ProductdetailsComponent,
         resolve: { product: productdetailsResolver }
     },
-    { path: 'userlist', component: UserlistComponent, canActivate: [teacherGuard] },
+    { path: 'userlist', component: UserlistComponent },
     { path: 'userdetails', component: UserdetailsComponent },
     { path: '**', component: NotfoundComponent },
 ];
